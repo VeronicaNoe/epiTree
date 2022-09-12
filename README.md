@@ -1,5 +1,4 @@
-# epiTree
-# Environmental and genealogical signals on DNA methylation in a widespread apomictic dandelion lineage
+# epiTree: Environmental and genealogical signals on DNA methylation in a widespread apomictic dandelion lineage
 
 This repository contains the instructions for reproducing results presented in "Environmental and genealogical signals on DNA methylation in a widespread apomictic dandelion lineage" by V.N. Ibañez, M. van Antro, C. Peña Ponton, S. Ivanovic, C.A.M. Wagemaker, F. Gawehns, K.J.F. Verhoeven. [preprint version](link here).
 
@@ -15,7 +14,7 @@ The 40 samples of this study were multiplexed together with 40 additional epiGBS
 These additional samples consist of the same 40 experimental plants after digestion with the restriction enzymes AseI and NsiI. 
 In this manuscript we present results from the *Csp6*I - *Nsi*I digested epiGBS samples, as these yielded higher sequencing output than the *Ase*I - *Nsi*I based samples. The results of the latter are presented as supplementary information.
 
-In order to proceed, you will need the [raw multiplexed read sequences](link2ENA), [barcode file for *Csp*6-*Nsi*I](link2zenodo) and [barcode file for *Ase*6-*Nsi*I](link2zenodo). In addition, the [*Csp*6-*Nsi*I_config.yaml] and [*Ase*6-*Nsi*I_config.yaml](link2zenodo) configuration files are provided.
+In order to proceed, you will need the [raw multiplexed read sequences](link2ENA), [*Csp*6-*Nsi*I_barcode.tsv](link2zenodo) and [*Ase*6-*Nsi*I_barcode.tsv](link2zenodo) files. In addition, the [*Csp*6-*Nsi*I_config.yaml] and [*Ase*6-*Nsi*I_config.yaml](link2zenodo) configuration files are provided.
 Raw read data should be processed following the steps in [*Preparation to run the pipeline*](https://github.com/nioo-knaw/epiGBS2#preparation-to-run-the-pipeline). 
 
 The outputs used in the following section are [methylation.bed](link2zenodo), [consensus_cluster.renamed_csp6.fa](link2zenodo) and [consensus_cluster.renamed_aseI.fa](link2zenodo).
