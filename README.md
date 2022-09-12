@@ -1,6 +1,6 @@
 # Environmental and genealogical signals on DNA methylation in a widespread apomictic dandelion lineage
 
-This repository contains the instructions for reproducing results presented in "Environmental and genealogical signals on DNA methylation in a widespread apomictic dandelion lineage" by V.N. Ibañez, M. van Antro, C. Peña Ponton, S. Ivanovic, C.A.M. Wagemaker, F. Gawehns, K.J.F. Verhoeven. [preprint version](link here).
+This repository contains the instructions for reproducing results presented in [*"Environmental and genealogical signals on DNA methylation in a widespread apomictic dandelion lineage"*](link2journal) by V.N. Ibañez, M. van Antro, C. Peña Ponton, S. Ivanovic, C.A.M. Wagemaker, F. Gawehns, K.J.F. Verhoeven. [download preprint version](link here).
 
 DNA methylation that occurs in CG sequence context shows transgenerational stability and high epimutation rate, and can thus provide genealogical information at short time scales. 
 Here we analysed DNA methylation variation between accessions from a geographically widespread, apomictic common dandelion *(Taraxacum officinale)* lineage, when grown experimentally under different light conditions. Using a [epiGBS2 protocol](https://github.com/nioo-knaw/epiGBS2), we show that the light treatment induced  differentially methylated cytosines (DMCs) in all sequence contexts, with a bias toward transposable elements. 
