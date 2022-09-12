@@ -1,4 +1,4 @@
-# epiTree: Environmental and genealogical signals on DNA methylation in a widespread apomictic dandelion lineage
+# Environmental and genealogical signals on DNA methylation in a widespread apomictic dandelion lineage
 
 This repository contains the instructions for reproducing results presented in "Environmental and genealogical signals on DNA methylation in a widespread apomictic dandelion lineage" by V.N. Ibañez, M. van Antro, C. Peña Ponton, S. Ivanovic, C.A.M. Wagemaker, F. Gawehns, K.J.F. Verhoeven. [preprint version](link here).
 
