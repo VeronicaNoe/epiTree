@@ -23,6 +23,6 @@ To compare, the reports for [*Csp*6-*Nsi*I](link2zenodo) and [*Ase*I-*Nsi*I](lin
 
 ## Detecting differentially methylated cytosines (DMC)
 
-We also provide demo notebooks with the code used in the article. Pleas, note that only a subset of sequenced cytosines are used due to limited resource from colab and to make a faster excution.
+We also provide demo notebooks with the code used in the article. Please, note that only a subset of sequenced cytosines are used due to limited resource from colab and to make a faster excution.
 
 [SSR data.csv](link2zenodo)
