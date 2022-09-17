@@ -270,7 +270,7 @@ f.read.sampleTable <- function(designTablePath, colNamesForGrouping = c()) {
 #'@export
 f.load.methylation.bed <- function(infileName, removeMulticontextPositions = TRUE, percentages = FALSE) {
   require("data.table")
-  if (grepl("\\.filtMETH$", infileName)) {
+  if (grepl("\\.filtered$", infileName)) {
     myData <- fread(infileName, sep = '\t', data.table = FALSE, fill = TRUE)
   } else {
     myData <- fread(infileName, sep = '\t', data.table = FALSE, fill = TRUE, na.string=c("None")) #na.string="None"  nrows = 1000
