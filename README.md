@@ -26,3 +26,13 @@ To compare, the reports for [*Csp*6-*Nsi*I](link2zenodo) and [*Ase*I-*Nsi*I](lin
 We also provide demo notebooks with the code used in the article. Please, note that only a subset of sequenced cytosines are used due to limited resource from colab and to make a faster excution.
 
 [SSR data.csv](link2zenodo)
+
+
+[Link](https://colab.research.google.com/github/VeronicaNoe/EpiEvo/blob/main/cuadernos/TP0_espacio_de_trabajo.ipynb)|[Link](https:
+
+
+|# |Script|Description|
+|:-:|----|:------:|
+|1|Filtering methylation file|[Link](https://colab.research.google.com/github/VeronicaNoe/EpiEvo/blob/main/cuadernos/TP0_espacio_de_trabajo.ipynb)|
+
+
