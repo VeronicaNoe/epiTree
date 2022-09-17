@@ -115,7 +115,7 @@ for (r in 1:length(RE)){
     qua4samples<-rbind(qua4samples, sampleDis)
   }
 
-  # Save results
+  # Save reports
   sink(paste0(baseDir,"/tmp/", RE[r],"_Filtering_report.txt"))
   paste0("Number of Cs from bed file: ", dimA)
   paste0("Quantile coverage from bed file: ")
