@@ -15,12 +15,11 @@ suppressPackageStartupMessages({
 })
 
 ## process both data set
-RE<-c("AseI", "Csp6")
+RE<-c("AseI-NsiI", "Csp6I-NsiI")
 for (r in 1:length(RE)){
   designTable <- file.path(paste0(baseDir, "/rawData/",RE[r], "_Design_withPlotInfos.txt"))
   print(designTable)
   infileName <- file.path(paste0(baseDir,"/rawData/",RE[r],"_methylation.bed"))
-  infileName <- file.path(paste0(baseDir,"/results/",RE[r],"_methylation.filtMETH"))
   print(infileName) 
   annotationFile <- file.path(paste0(baseDir, "/annotation/",RE[r], "_mergedAnnot.csv"))
   print(annotationFile)
