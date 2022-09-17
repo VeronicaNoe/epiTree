@@ -30,5 +30,6 @@ Please, note that only a subset of sequenced cytosines are used due to limited r
 |# |Script|Description| Notebook|
 |:-:|----|:------:|:---:|
 |1|[01_filterMethylation.R](https://github.com/VeronicaNoe/epiTree/blob/main/Rscripts/01_filterMethylation.R)| Generate a filtered methylation file |[<img src="https://colab.research.google.com/assets/colab-badge.svg">](https://colab.research.google.com/github.com/VeronicaNoe/epiTree/blob/main/notebooks/01_filterMethylation.ipynb)|
-|1|[01_filterMethylation.R](https://github.com/VeronicaNoe/epiTree/blob/main/Rscripts/01_filterMethylation.R)| Generate a filtered methylation file |[<img src="https://colab.research.google.com/assets/colab-badge.svg">](https://colab.research.google.com/raw.githubusercontent.com/VeronicaNoe/epiTree/main/notebooks/01_filterMethylation.ipynb)|
+|1|[01_filterMethylation.R](https://github.com/VeronicaNoe/epiTree/blob/main/Rscripts/01_filterMethylation.R)| Generate a filtered methylation file |[<img src="https://colab.research.google.com/assets/colab-badge.svg">](https://colab.research.google.com/github/VeronicaNoe/epiTree/blob/main/notebooks/01_filterMethylation.ipynb)|
+
 
