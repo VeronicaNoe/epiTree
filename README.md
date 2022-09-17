@@ -2,11 +2,12 @@
 
 This repository contains the instructions for reproducing results presented in [*"Environmental and genealogical signals on DNA methylation in a widespread apomictic dandelion lineage"*](link2journal) by V.N. Ibañez, M. van Antro, C. Peña Ponton, S. Ivanovic, C.A.M. Wagemaker, F. Gawehns, K.J.F. Verhoeven. [download preprint version](link here).
 
-DNA methylation that occurs in CG sequence context shows transgenerational stability and high epimutation rate, and can thus provide genealogical information at short time scales. 
+DNA methylation that occurs in CG sequence context shows transgenerational stability and high epimutation rate, and can thus provide genealogical information at short time scales. Here we analysed DNA methylation variation between accessions from a geographically widespread, apomictic common dandelion *(Taraxacum officinale)* lineage, when grown experimentally under different light conditions. 
 
-Here we analysed DNA methylation variation between accessions from a geographically widespread, apomictic common dandelion *(Taraxacum officinale)* lineage, when grown experimentally under different light conditions. Using a [epiGBS2 protocol](https://github.com/nioo-knaw/epiGBS2), we show that the light treatment induced  differentially methylated cytosines (DMCs) in all sequence contexts, with a bias toward transposable elements. 
-Accession differences were associated with DMCs in CG context. Hierarchical clustering of samples based on total mCG profiles revealed a perfect clustering of samples by accession identity, irrespective of light conditions. 
+Using a [epiGBS2 protocol](https://github.com/nioo-knaw/epiGBS2), we show that the light treatment induced  differentially methylated cytosines (DMCs) in all sequence contexts, with a bias toward transposable elements. Accession differences were associated with DMCs in CG context. Hierarchical clustering of samples based on total mCG profiles revealed a perfect clustering of samples by accession identity, irrespective of light conditions. 
+
 Using microsatellite information as a benchmark of genetic divergence within the clonal lineage, we show that genetic divergence between accessions correlates strongly with overall mCG profiles. However, our results suggest that environmental effects that do occur in CG context might produce a heritable signal that partly dilutes the genealogical signal. 
+
 Our study shows that methylation information can be used to reconstruct micro-evolutionary genealogy, providing a useful tool in systems that lack genetic variation such as clonal and vegetatively propagated plants.
 
 ## Processing of raw multiplexed read sequences
@@ -29,7 +30,10 @@ Please, note that only a subset of sequenced cytosines are used due to limited r
 
 |# |Script|Description| Notebook|
 |:-:|----|:------:|:---:|
-|1|[01_filterMethylation.R](https://github.com/VeronicaNoe/epiTree/blob/main/Rscripts/01_filterMethylation.R)| Generate a filtered methylation file |[<img src="https://colab.research.google.com/assets/colab-badge.svg">](https://colab.research.google.com/github.com/VeronicaNoe/epiTree/blob/main/notebooks/01_filterMethylation.ipynb)|
 |1|[01_filterMethylation.R](https://github.com/VeronicaNoe/epiTree/blob/main/Rscripts/01_filterMethylation.R)| Generate a filtered methylation file |[<img src="https://colab.research.google.com/assets/colab-badge.svg">](https://colab.research.google.com/github/VeronicaNoe/epiTree/blob/main/notebooks/01_filterMethylation.ipynb)|
-
+|2|[02_characterizeOverallMethylation.R](https://github.com/VeronicaNoe/epiTree/blob/main/Rscripts/02_characterizeOverallMethylation.R)| Generate a filtered methylation file |[<img src="https://colab.research.google.com/assets/colab-badge.svg">](https://colab.research.google.com/github/VeronicaNoe/epiTree/blob/main/notebooks/02_characterizeOverallMethylation.ipynb)|
+|3|[03_filterMethylation.R](https://github.com/VeronicaNoe/epiTree/blob/main/Rscripts/01_filterMethylation.R)| Generate a filtered methylation file |[<img src="https://colab.research.google.com/assets/colab-badge.svg">](https://colab.research.google.com/github/VeronicaNoe/epiTree/blob/main/notebooks/01_filterMethylation.ipynb)|
+|4|[04_filterMethylation.R](https://github.com/VeronicaNoe/epiTree/blob/main/Rscripts/01_filterMethylation.R)| Generate a filtered methylation file |[<img src="https://colab.research.google.com/assets/colab-badge.svg">](https://colab.research.google.com/github/VeronicaNoe/epiTree/blob/main/notebooks/01_filterMethylation.ipynb)|
+|5|[05_filterMethylation.R](https://github.com/VeronicaNoe/epiTree/blob/main/Rscripts/01_filterMethylation.R)| Generate a filtered methylation file |[<img src="https://colab.research.google.com/assets/colab-badge.svg">](https://colab.research.google.com/github/VeronicaNoe/epiTree/blob/main/notebooks/01_filterMethylation.ipynb)|
+|6|[06_filterMethylation.R](https://github.com/VeronicaNoe/epiTree/blob/main/Rscripts/01_filterMethylation.R)| Generate a filtered methylation file |[<img src="https://colab.research.google.com/assets/colab-badge.svg">](https://colab.research.google.com/github/VeronicaNoe/epiTree/blob/main/notebooks/01_filterMethylation.ipynb)|
 
