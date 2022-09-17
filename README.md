@@ -17,22 +17,17 @@ In this manuscript we present results from the *Csp6*I - *Nsi*I digested epiGBS 
 In order to proceed, you will need the [raw multiplexed read sequences](link2ENA), [*Csp*6-*Nsi*I_barcode.tsv](link2zenodo) and [*Ase*6-*Nsi*I_barcode.tsv](link2zenodo) files. In addition, the [*Csp*6-*Nsi*I_config.yaml](link2zenodo) and [*Ase*6-*Nsi*I_config.yaml](link2zenodo) configuration files are provided.
 Raw read data should be processed following the steps in [*Preparation to run the pipeline*](https://github.com/nioo-knaw/epiGBS2#preparation-to-run-the-pipeline). 
 
-The outputs used in the following section are [methylation.bed](link2zenodo), [consensus_cluster.renamed_csp6.fa](link2zenodo) and [consensus_cluster.renamed_aseI.fa](link2zenodo).
+The outputs from epiGBS pipeline used in the following section are [methylation.bed](link2zenodo), [consensus_cluster.renamed_csp6.fa](link2zenodo) and [consensus_cluster.renamed_aseI.fa](link2zenodo).
 
 To compare, the reports for [*Csp*6-*Nsi*I](link2zenodo) and [*Ase*I-*Nsi*I](link2zenodo) obtained after run the epiGBS pipeline are also provided.
 
-## Detecting differentially methylated cytosines (DMC)
+## Downstream analysis of methylation data
 
-We also provide demo notebooks with the code used in the article. Please, note that only a subset of sequenced cytosines are used due to limited resource from colab and to make a faster excution.
-
-[SSR data.csv](link2zenodo)
-
-
-[Link](https://colab.research.google.com/github/VeronicaNoe/EpiEvo/blob/main/cuadernos/TP0_espacio_de_trabajo.ipynb)|[Link](https:
-
+We also provide demo notebooks with the code used in the article. 
+Please, note that only a subset of sequenced cytosines are used due to limited resource from colab and to make a faster excution.
 
 |# |Script|Description|
 |:-:|----|:------:|
-|1|Filtering methylation file|[Link](https://colab.research.google.com/github/VeronicaNoe/EpiEvo/blob/main/cuadernos/TP0_espacio_de_trabajo.ipynb)|
+|1|Filtering methylation file| Generate a filtered methylation file |[Link](https://colab.research.google.com/github.com/VeronicaNoe/epiTree/blob/main/notebooks/01_filterMethylation.ipynb)|
 
 
