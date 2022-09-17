@@ -27,7 +27,5 @@ We also provide demo notebooks with the code used in the article.
 Please, note that only a subset of sequenced cytosines are used due to limited resource from colab and to make a faster excution.
 
 |# |Script|Description| Notebook|
-|:-:|----|:------:|
+|:-:|----|:------:|:---:|
 |1|Filtering methylation file| Generate a filtered methylation file |[<img src="https://colab.research.google.com/assets/colab-badge.svg">](https://colab.research.google.com/github.com/VeronicaNoe/epiTree/blob/main/notebooks/01_filterMethylation.ipynb)|
-
-
