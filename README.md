@@ -1,14 +1,14 @@
 # Environmental and genealogical signals on DNA methylation in a widespread apomictic dandelion lineage
 
-This repository contains the instructions for reproducing results presented in [*"Environmental and genealogical signals on DNA methylation in a widespread apomictic dandelion lineage"*](link2journal) by V.N. Ibañez, M. van Antro, C. Peña Ponton, S. Ivanovic, C.A.M. Wagemaker, F. Gawehns, K.J.F. Verhoeven. [download preprint version](link here).
+This repository reproduces the results presented in [*"Environmental and genealogical signals on DNA methylation in a widespread apomictic dandelion lineage"*](link2journal) by V.N. Ibañez, M. van Antro, C. Peña Ponton, S. Ivanovic, C.A.M. Wagemaker, F. Gawehns, K.J.F. Verhoeven. [download preprint version](link here).
 
-DNA methylation that occurs in CG sequence context shows transgenerational stability and high epimutation rate, and can thus provide genealogical information at short time scales. Here we analysed DNA methylation variation between accessions from a geographically widespread, apomictic common dandelion *(Taraxacum officinale)* lineage, when grown experimentally under different light conditions. 
+DNA methylation that occurs in CG sequence context shows transgenerational stability and high epimutation rate, and can thus provide genealogical information at short time scales. Here, [epiGBS2 protocol](https://github.com/nioo-knaw/epiGBS2) is used to analyze DNA methylation between accessions from a geographically widespread, apomictic common dandelion *(Taraxacum officinale)* lineage grown experimentally under different light conditions.
 
-Using a [epiGBS2 protocol](https://github.com/nioo-knaw/epiGBS2), we show that the light treatment induced  differentially methylated cytosines (DMCs) in all sequence contexts, with a bias toward transposable elements. Accession differences were associated with DMCs in CG context. Hierarchical clustering of samples based on total mCG profiles revealed a perfect clustering of samples by accession identity, irrespective of light conditions. 
+We show that the light treatment induced  differentially methylated cytosines (DMCs) in all sequence contexts, with a bias toward transposable elements. Accession differences were associated with DMCs in CG context. Hierarchical clustering of samples based on total mCG profiles revealed a perfect clustering of samples by accession identity, irrespective of light conditions. 
 
 Using microsatellite information as a benchmark of genetic divergence within the clonal lineage, we show that genetic divergence between accessions correlates strongly with overall mCG profiles. However, our results suggest that environmental effects that do occur in CG context might produce a heritable signal that partly dilutes the genealogical signal. 
 
-Our study shows that methylation information can be used to reconstruct micro-evolutionary genealogy, providing a useful tool in systems that lack genetic variation such as clonal and vegetatively propagated plants.
+Our methodology  can be used as a tool for reconstructing micro-evolutionary genealogy, particularly for systems lacking genetic variation, such as clonal and vegetatively propagated plants.
 
 ## Processing of raw multiplexed read sequences
 
@@ -25,8 +25,7 @@ To compare, the reports for [*Csp*6-*Nsi*I](link2zenodo) and [*Ase*I-*Nsi*I](lin
 
 ## Downstream analysis of methylation data
 
-We also provide demo notebooks with the code used in the article. 
-Please, note that only a subset of sequenced cytosines are used due to limited resource from colab and to make a faster excution.
+Below there are notebooks demonstrating how data was processing in the article using a subset of the sequenced cytosines.
 
 |# |Script|Description| Notebook|
 |:-:|----|:------:|:---:|
