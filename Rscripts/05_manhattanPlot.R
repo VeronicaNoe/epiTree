@@ -6,29 +6,25 @@ scriptDir <- file.path(baseDir, "scripts")
 
 ## load packages silently
 suppressPackageStartupMessages({
-  library("data.table") # file reading
-  library("DSS")
-  library("qqman")
-  library("plyr")
-  library("dplyr")
-  library(vegan)
-  library("reshape2")
-  library("tidyr")
-  library("tidyverse")
+  library(data.table) # file reading
+  library(qqman)
+  library(plyr)
+  library(dplyr)
+  library(tidyr)
   source(file.path(scriptDir, "commonFunctions.R"))
 })
 
 ## process both data set
-RE<-c("AseI", "Csp6")
-#RE<-c("Csp6")
-data<-read.csv("00_DMC_table.csv", header=TRUE, sep="\t")
+RE<-c("AseI-NsiI", "Csp6I-NsiI")
+infileName <- file.path(paste0(baseDir,"/rawData/","00_DMC_table.csv"))
+data<-read.csv(infileName, header=TRUE, sep="\t")
 head(data)
 #for (r in 1:1){
 for (r in 1:length(RE)){
   toUse<-RE[r]
   dfDMC<-dplyr::filter(data, RE==toUse)
   dfDMC<-dplyr::filter(dfDMC, fdrs!="NA")
-  #dfDMC<-dplyr::filter(dfDMC, factor=="Treat")
+  dfDMC<-dplyr::filter(dfDMC, factor=="Treat")
   dfDMC<-unite(dfDMC, chrPos, c(chr, pos), sep="_", remove=FALSE)
   dfDMC$chr<-as.numeric(dfDMC$chr)
   
@@ -46,10 +42,9 @@ for (r in 1:length(RE)){
   outdf <- outdf[order(-outdf$ocurrences),]
   out<-dplyr::filter(outdf, ocurrences>=5)
   out<-out[order(out$chr),]
-  write.csv(out, paste0(baseDir,"_",RE[r],"_Regions.csv"),row.names = FALSE)
+  write.csv(out, paste0(baseDir,"/results/",RE[r],"_DMRegions.csv"),row.names = FALSE)
   
   outDir<-paste0(baseDir,"/plots/", RE[r],"_")
-  #ctxt <- c("CHH", "CG", "CHG")
   ctxt <- c("CG","CHG","CHH")
   for (i in 1:length(ctxt)){
     df<-dplyr::filter(dfDMC, context==ctxt[i])
