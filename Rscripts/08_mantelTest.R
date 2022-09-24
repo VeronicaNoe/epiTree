@@ -1,32 +1,25 @@
+## Set path to input files:
 rm(list=ls())
 wd<-getwd()
-getwd()
 baseDir <- gsub("/results", "", wd)
 scriptDir <- file.path(baseDir, "scripts")
-#ssrData<-file.path("PATH_TO_FILE/SSR_Data.csv")
-ssrData<-file.path("/Users/macbook/Documents/Wageningen/toSubmit/scripts/SSR_Data.csv")
-
 
 ## load packages silently
 suppressPackageStartupMessages({
-  library("data.table") # file reading
-  library("plyr")
-  library("dplyr")
+  library(data.table) # file reading
   library(vegan)
-  library("reshape2")
-  library("tidyr")
-  library("tidyverse")
+  library(tidyr)
   library(adegenet)
-  library(ape)
   library(poppr)
-  #source(file.path(scriptDir, "commonFunctions.R"))
-  source(file.path("../../toSubmit/scripts", "commonFunctions.R"))
+  source(file.path(scriptDir, "commonFunctions.R"))
 })
 
-RE<-c("AseI", "Csp6")
+#load data
+ssrData<-file.path(paste0(baseDir, "/rawData/","SSR_Data.csv"))
+RE<-c("AseI-NsiI", "Csp6I-NsiI")
 for (r in 1:length(RE)){
   #genetic data
-  SSR<-read.csv(ssrData, header=TRUE,  check.names = FALSE, sep=",")
+  SSR<-read.csv(ssrData, header=TRUE, row.names = 1, check.names = FALSE, sep="\t")
   ind<-rownames(SSR)
   site<-as.character(SSR[,2])
   SSR[,1:2]<-NULL
@@ -35,8 +28,8 @@ for (r in 1:length(RE)){
   
   #epigenetic data
   designTable <- file.path(paste0(baseDir, "/rawData/",RE[r], "_Design_with_converage_info.txt"))
-  infileName <- file.path(paste0(baseDir,"/results/",RE[r],"_methylation.filtMETH"))
-  annotationFile <- file.path(paste0(baseDir, "/rawData/",RE[r], "_mergedAnnot.csv"))
+  infileName <- file.path(paste0(baseDir,"/rawData/",RE[r],"_methylation.filtered"))
+  annotationFile <- file.path(paste0(baseDir, "/annotation/",RE[r], "_mergedAnnot.csv"))
   
   sampleTab <- f.read.sampleTable(designTable) # see commonFunctions.R
   myData <- f.load.methylation.bed(infileName) # see commonFunctions.R
@@ -46,10 +39,10 @@ for (r in 1:length(RE)){
   for (c in 1:length(ctxt)){
     toKeepCTXT<-ctxt[c]
     myD <- subset(myData, context == toKeepCTXT)
-    #split data for control and Shade samples
+    #skeep only control samples
     sampleNames<-sampleTab[order(rownames(sampleTab)),]
     controlSamples<-subset(sampleTab, Treat=="Control")
-    shadeSamples<-subset(sampleTab, Treat=="Shade")
+    
     #do mantel test for each feature
     ftr <- c("all","gene", "transposon", "repeat", "nothing")
     out<-c()
@@ -63,6 +56,7 @@ for (r in 1:length(RE)){
       mD <- myD[as.character(myD$chr) %in% as.character(commonChr),]
       lenDMC<-c(ftr[f],nrow(mD))
       numDMC<-rbind(numDMC, lenDMC)  
+      numDMC<-data.frame(numDMC)
       
       totalCols <- grep("_total$", colnames(mD), value = TRUE)
       methCols <- grep("_methylated$", colnames(mD), value = TRUE)
@@ -74,26 +68,18 @@ for (r in 1:length(RE)){
       datos<-t(mePerc)
       datos<-datos[order(rownames(datos)),]
       controlDF<-datos[rownames(controlSamples),]
-      shadeDF<-datos[rownames(shadeSamples),]
-      rownames(shadeDF)<-rownames(controlDF)
       
       # distances  
       control.dis.std<-vegdist(decostand(controlDF, "norm",na.rm=TRUE), "euclidean", na.rm=TRUE)/2
-      shade.dis.std<-vegdist(decostand(shadeDF, "norm",na.rm=TRUE), "euclidean", na.rm=TRUE)/2
       
       ####mantel_test
-      bothTreat<-(control.dis.std+shade.dis.std)/2
       controlMantelTest<-mantel(control.dis.std, SSRdist, "pearson", permutation= 1000)
-      shadeMantelTest<-mantel(shade.dis.std, SSRdist, "pearson", permutation= 1000)
-      bothMantelTest<-mantel(bothTreat, SSRdist, "pearson", permutation= 1000)
-      #toSave<-c(ftr[f],as.numeric(c(controlMantelTest$statistic, controlMantelTest$signif,shadeMantelTest$statistic, shadeMantelTest$signif, bothMantelTest$statistic, bothMantelTest$signif)))
       toSave<-c(ftr[f], controlMantelTest$statistic, controlMantelTest$signif)
       cat(toSave, "\n")
       out<-rbind(out,toSave)
     }
     rownames(out)<-out[,1]    
     out<-out[,-1]
-    #colnames(out)<-c("r2_control", "p-value_control","r2_shade", "p-value_shade","r2_both", "p-value_both")
     colnames(out)<-c("r2", "p-value")
     out<-as.data.frame(out)
     whichAnalisis<-rep("all", times=nrow(out))
@@ -102,7 +88,7 @@ for (r in 1:length(RE)){
     ######################      
     #para filtrar por DMC
     inFile<-list.files(pattern = "_table.csv")
-    dfDMC<-read.csv(inFile, header=TRUE, sep="\t")
+    dfDMC<-read.csv(inFile[1], header=TRUE, sep="\t")
     dfDMC<-unite(dfDMC, chrPos, c(chr, pos), sep="_", remove=FALSE)
     toKeepRE<-RE[r]
     toKeepCTXT<-ctxt[c]
@@ -147,35 +133,27 @@ for (r in 1:length(RE)){
       datos<-t(mePerc)
       datos<-datos[order(rownames(datos)),]
       controlDF<-datos[rownames(controlSamples),]
-      shadeDF<-datos[rownames(shadeSamples),]
-      rownames(shadeDF)<-rownames(controlDF)
       
       # distances  
-      control.dis.std<-vegdist(decostand(controlDF, "norm",na.rm=TRUE), "euclidean", na.rm=TRUE)/2
-      shade.dis.std<-vegdist(decostand(shadeDF, "norm",na.rm=TRUE), "euclidean", na.rm=TRUE)/2
+      control.dis.std<-vegdist(decostand(controlDF, "norm",na.rm=TRUE), "euclidean", na.rm=TRUE)
       
       ####mantel_test
-      bothTreat<-(control.dis.std+shade.dis.std)/2
       controlMantelTest<-mantel(control.dis.std, SSRdist, "pearson", permutation= 1000)
-      shadeMantelTest<-mantel(shade.dis.std, SSRdist, "pearson", permutation= 1000)
-      bothMantelTest<-mantel(bothTreat, SSRdist, "pearson", permutation= 1000)
-      #toSave<-c(ftr[f],as.numeric(c(controlMantelTest$statistic, controlMantelTest$signif,shadeMantelTest$statistic, shadeMantelTest$signif, bothMantelTest$statistic, bothMantelTest$signif)))
-      toSave<-c(ftr[f], bothMantelTest$statistic, bothMantelTest$signif)
+      toSave<-c(ftr[f], controlMantelTest$statistic, controlMantelTest$signif)
       cat(toSave, "\n")
       out<-rbind(out,toSave)
     }
     
     rownames(out)<-out[,1]    
     out<-out[,-1]
-    #colnames(out)<-c("r2_control", "p-value_control","r2_shade", "p-value_shade","r2_both", "p-value_both")
     colnames(out)<-c("r2", "p-value")
     out<-as.data.frame(out)
     whichAnalisis<-rep("DMC", times=nrow(out))
     b<-cbind(whichAnalisis, out)
     mantelTestResult<-rbind(mantelTestResult, b)   
     colnames(numDMC)<-c("feature","number_of_C")
-    numDMC<-as.data.frame(numDMC)
-    numDMC<-filter(numDMC, number_of_C!=1)
+    numDMC$number_of_C<-as.numeric(numDMC$number_of_C)
+    numDMC<-subset(numDMC, numDMC$number_of_C >1)
     outDF<-cbind(mantelTestResult, numDMC)
     write.table(outDF, file = paste0(RE[r],"_",ctxt[c],"_MantelTestResult.csv"), sep = '\t', col.names = TRUE, row.names = FALSE, quote = FALSE)
   }
