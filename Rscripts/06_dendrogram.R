@@ -95,8 +95,8 @@ for (r in 1:length(RE)){
           sampleNames$Sample_name<-rownames(sampleNames)
           sampleNames<-unite(sampleNames, roName, Treat,Acc, sep=":", remove=TRUE)
           rownames(datos)<-sampleNames$roName
-          #onlyControl<-grep("Control:", rownames(datos))
-          #datos<-datos[onlyControl,]
+          onlyControl<-grep("Control:", rownames(datos))
+          datos<-datos[onlyControl,]
           dis <- vegdist(datos, na.rm=TRUE, "euclid")
           dist<-vegdist(decostand(dis, "norm"), "euclidean", na.rm=TRUE)
           clus<-hclust(dist, "average")
