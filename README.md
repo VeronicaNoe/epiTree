@@ -46,7 +46,5 @@ Below there are notebooks demonstrating how data was processing in the article u
 |4|[04_epiTree.R](https://github.com/VeronicaNoe/epiTree/blob/main/Rscripts/04_differentialCytosineMethylationWithDSS.R)| Obtain the differential Methylated Cytosines with DSS |[<img src="https://colab.research.google.com/assets/colab-badge.svg">](https://colab.research.google.com/github/VeronicaNoe/epiTree/blob/main/notebooks/04_differentialCytosineMethylationWithDSS.ipynb)|
 |5|[05_epiTree.R](https://github.com/VeronicaNoe/epiTree/blob/main/Rscripts/05_manhattanPlot.R)| Obtain Manhattan plots |[<img src="https://colab.research.google.com/assets/colab-badge.svg">](https://colab.research.google.com/github/VeronicaNoe/epiTree/blob/main/notebooks/05_manhattanPlot.ipynb)|
 |6|[06_epiTree.R](https://github.com/VeronicaNoe/epiTree/blob/main/Rscripts/06_dendrogram.R)| Obtain dendrograms |[<img src="https://colab.research.google.com/assets/colab-badge.svg">](https://colab.research.google.com/github/VeronicaNoe/epiTree/blob/main/notebooks/06_dendrogram.ipynb)|
-
-|7|[06_epiTree.R](https://github.com/VeronicaNoe/epiTree/blob/main/Rscripts/06_dendrogram.R)| EDIT |[<img src="https://colab.research.google.com/assets/colab-badge.svg">](https://colab.research.google.com/github/VeronicaNoe/epiTree/blob/main/notebooks/06_dendrogram.ipynb)|
-
-https://github.com/VeronicaNoe/epiTree/blob/main/notebooks/
+|7|[07_epiTree.R](https://github.com/VeronicaNoe/epiTree/blob/main/Rscripts/07_DMC_description.R)| Characterize DMC |[<img src="https://colab.research.google.com/assets/colab-badge.svg">](https://colab.research.google.com/github/VeronicaNoe/epiTree/blob/main/notebooks/07_DMC_description.ipynb)|
+|8|[08_epiTree.R](https://github.com/VeronicaNoe/epiTree/blob/main/Rscripts/08_mantelTest.R)| Mantel test |[<img src="https://colab.research.google.com/assets/colab-badge.svg">](https://colab.research.google.com/github/VeronicaNoe/epiTree/blob/main/notebooks/08_mantelTest.ipynb)|
