@@ -23,14 +23,14 @@ In order to proceed, you will need the following files:
   - [consensus_cluster.renamed_csp6.fa](https://doi.org/10.5281/zenodo.6793166) and 
   - [consensus_cluster.renamed_aseI.fa](https://doi.org/10.5281/zenodo.6793166).
   
-Also, the configuration files used with the [epiGBS pipeline] (https://github.com/nioo-knaw/epiGBS2) are provided.
+Also, the configuration files used with the [epiGBS pipeline](https://github.com/nioo-knaw/epiGBS2) are provided.
   - [*Csp*6-*Nsi*I_config.yaml](https://doi.org/10.5281/zenodo.6793166) and 
   - [*Ase*6-*Nsi*I_config.yaml](https://doi.org/10.5281/zenodo.6793166).
 
-Raw read data should be processed with [epiGBS pipeline] (https://github.com/nioo-knaw/epiGBS2) following the steps in [*Preparation to run the pipeline*](https://github.com/nioo-knaw/epiGBS2#preparation-to-run-the-pipeline).
+Raw read data should be processed with [epiGBS pipeline](https://github.com/nioo-knaw/epiGBS2) following the steps in [*Preparation to run the pipeline*](https://github.com/nioo-knaw/epiGBS2#preparation-to-run-the-pipeline).
 
 
-To compare, the reports obtained after running the [epiGBS pipeline] (https://github.com/nioo-knaw/epiGBS2) are also provided:
+To compare, the reports obtained after running the [epiGBS pipeline](https://github.com/nioo-knaw/epiGBS2) are also provided:
   - [*Csp*6-*Nsi*I](https://doi.org/10.5281/zenodo.6793166) and 
   - [*Ase*I-*Nsi*I](https://doi.org/10.5281/zenodo.6793166).
 
