@@ -1,6 +1,6 @@
 # Environmental and genealogical effects on DNA methylation in a widespread apomictic dandelion lineage
 
-This repository reproduces the results presented in [*"Environmental and genealogical effects on DNA methylation in a widespread apomictic dandelion lineage"*](link2journal) by V.N. Ibañez, M. van Antro, C. Peña Ponton, S. Ivanovic, C.A.M. Wagemaker, F. Gawehns, K.J.F. Verhoeven. [download preprint version](link here).
+This repository reproduces the results presented in [*"Environmental and genealogical effects on DNA methylation in a widespread apomictic dandelion lineage"*](link2journal) by V.N. Ibañez, M. van Antro, C. Peña Ponton, S. Ivanovic, C.A.M. Wagemaker, F. Gawehns, K.J.F. Verhoeven.
 
 DNA methylation that occurs in CG sequence context shows transgenerational stability and high epimutation rate, and can thus provide genealogical information at short time scales. Here, [epiGBS2 protocol](https://github.com/nioo-knaw/epiGBS2) is used to analyze DNA methylation between accessions from a geographically widespread, apomictic common dandelion *(Taraxacum officinale)* lineage grown experimentally under different light conditions.
 
@@ -12,16 +12,27 @@ Our methodology  can be used as a tool for reconstructing micro-evolutionary gen
 
 ## Processing of raw multiplexed read sequences
 
-The 40 samples of this study were multiplexed together with 40 additional epiGBS samples in the same sequencing library. 
-These additional samples consist of the same 40 experimental plants after digestion with the restriction enzymes AseI and NsiI. 
-In this manuscript we present results from the *Csp6*I - *Nsi*I digested epiGBS samples, as these yielded higher sequencing output than the *Ase*I - *Nsi*I based samples. The results of the latter are presented as supplementary information.
+A total of 80 samples were multiplexed together in the same sequence library. Half of them, were digested with the restriction enzymes *AseI* or  *Csp6* and NsiI. 
+In this manuscript we present results from the *Csp6*I - *Nsi*I digested epiGBS samples, as these yielded higher sequencing output than the *Ase*I - *Nsi*I based samples. However, the following scripts can handle both sets of data.
 
-In order to proceed, you will need the [raw multiplexed read sequences](link2ENA), [*Csp*6-*Nsi*I_barcode.tsv](link2zenodo) and [*Ase*6-*Nsi*I_barcode.tsv](link2zenodo) files. In addition, the [*Csp*6-*Nsi*I_config.yaml](link2zenodo) and [*Ase*6-*Nsi*I_config.yaml](link2zenodo) configuration files are provided.
-Raw read data should be processed following the steps in [*Preparation to run the pipeline*](https://github.com/nioo-knaw/epiGBS2#preparation-to-run-the-pipeline). 
+In order to proceed, you will need the following files:
+  - [raw multiplexed read sequences](https://doi.org/10.5281/zenodo.6793166), 
+  - [*Csp*6-*Nsi*I_barcode.tsv](https://doi.org/10.5281/zenodo.6793166),
+  - [*Ase*6-*Nsi*I_barcode.tsv](https://doi.org/10.5281/zenodo.6793166),
+  - [methylation.bed](https://doi.org/10.5281/zenodo.6793166), 
+  - [consensus_cluster.renamed_csp6.fa](https://doi.org/10.5281/zenodo.6793166) and 
+  - [consensus_cluster.renamed_aseI.fa](https://doi.org/10.5281/zenodo.6793166).
+  
+Also, the configuration files used with the [epiGBS pipeline] (https://github.com/nioo-knaw/epiGBS2) are provided.
+  - [*Csp*6-*Nsi*I_config.yaml](https://doi.org/10.5281/zenodo.6793166) and 
+  - [*Ase*6-*Nsi*I_config.yaml](https://doi.org/10.5281/zenodo.6793166).
 
-The outputs from epiGBS pipeline used in the following section are [methylation.bed](link2zenodo), [consensus_cluster.renamed_csp6.fa](link2zenodo) and [consensus_cluster.renamed_aseI.fa](link2zenodo).
+Raw read data should be processed with [epiGBS pipeline] (https://github.com/nioo-knaw/epiGBS2) following the steps in [*Preparation to run the pipeline*](https://github.com/nioo-knaw/epiGBS2#preparation-to-run-the-pipeline).
 
-To compare, the reports for [*Csp*6-*Nsi*I](link2zenodo) and [*Ase*I-*Nsi*I](link2zenodo) obtained after run the epiGBS pipeline are also provided.
+
+To compare, the reports obtained after running the [epiGBS pipeline] (https://github.com/nioo-knaw/epiGBS2) are also provided:
+  - [*Csp*6-*Nsi*I](https://doi.org/10.5281/zenodo.6793166) and 
+  - [*Ase*I-*Nsi*I](https://doi.org/10.5281/zenodo.6793166).
 
 ## Downstream analysis of methylation data
 
@@ -29,9 +40,9 @@ Below there are notebooks demonstrating how data was processing in the article u
 
 |# |Script|Description| Notebook|
 |:-:|----|:------:|:---:|
-|1|[01_filterMethylation.R](https://github.com/VeronicaNoe/epiTree/blob/main/Rscripts/01_filterMethylation.R)| Generate a filtered methylation file |[<img src="https://colab.research.google.com/assets/colab-badge.svg">](https://colab.research.google.com/github/VeronicaNoe/epiTree/blob/main/notebooks/01_filterMethylation.ipynb)|
-|2|[02_characterizeOverallMethylation.R](https://github.com/VeronicaNoe/epiTree/blob/main/Rscripts/02_characterizeOverallMethylation.R)| EDIT |[<img src="https://colab.research.google.com/assets/colab-badge.svg">](https://colab.research.google.com/github/VeronicaNoe/epiTree/blob/main/notebooks/02_characterizeOverallMethylation.ipynb)|
-|3|[03_distances.R](https://github.com/VeronicaNoe/epiTree/blob/main/Rscripts/03_distances.R)| EDIT |[<img src="https://colab.research.google.com/assets/colab-badge.svg">](https://colab.research.google.com/github/VeronicaNoe/epiTree/blob/main/notebooks/03_distances.ipynb)|
-|4|[04_differentialCytosineMethylationWithDSS.R](https://github.com/VeronicaNoe/epiTree/blob/main/Rscripts/04_differentialCytosineMethylationWithDSS.R)| EDIT |[<img src="https://colab.research.google.com/assets/colab-badge.svg">](https://colab.research.google.com/github/VeronicaNoe/epiTree/blob/main/notebooks/04_differentialCytosineMethylationWithDSS.ipynb)|
-|5|[05_manhattanPlot.R](https://github.com/VeronicaNoe/epiTree/blob/main/Rscripts/05_manhattanPlot.R)| EDIT |[<img src="https://colab.research.google.com/assets/colab-badge.svg">](https://colab.research.google.com/github/VeronicaNoe/epiTree/blob/main/notebooks/05_manhattanPlot.ipynb)|
-|6|[06_filterMethylation.R](https://github.com/VeronicaNoe/epiTree/blob/main/Rscripts/01_filterMethylation.R)| EDIT |[<img src="https://colab.research.google.com/assets/colab-badge.svg">](https://colab.research.google.com/github/VeronicaNoe/epiTree/blob/main/notebooks/01_filterMethylation.ipynb)|
+|1|[01_epiTree.R](https://github.com/VeronicaNoe/epiTree/blob/main/Rscripts/01_filterMethylation.R)| Generate a filtered methylation file |[<img src="https://colab.research.google.com/assets/colab-badge.svg">](https://colab.research.google.com/github/VeronicaNoe/epiTree/blob/main/notebooks/01_filterMethylation.ipynb)|
+|2|[02_epiTree.R](https://github.com/VeronicaNoe/epiTree/blob/main/Rscripts/02_characterizeOverallMethylation.R)| Characterize overall methylation levels|[<img src="https://colab.research.google.com/assets/colab-badge.svg">](https://colab.research.google.com/github/VeronicaNoe/epiTree/blob/main/notebooks/02_characterizeOverallMethylation.ipynb)|
+|3|[03_epiTree.R](https://github.com/VeronicaNoe/epiTree/blob/main/Rscripts/03_distances.R)| Generate distances matrices |[<img src="https://colab.research.google.com/assets/colab-badge.svg">](https://colab.research.google.com/github/VeronicaNoe/epiTree/blob/main/notebooks/03_distances.ipynb)|
+|4|[04_epiTree.R](https://github.com/VeronicaNoe/epiTree/blob/main/Rscripts/04_differentialCytosineMethylationWithDSS.R)| Obtain the differential Methylated Cytosines with DSS |[<img src="https://colab.research.google.com/assets/colab-badge.svg">](https://colab.research.google.com/github/VeronicaNoe/epiTree/blob/main/notebooks/04_differentialCytosineMethylationWithDSS.ipynb)|
+|5|[05_epiTree.R](https://github.com/VeronicaNoe/epiTree/blob/main/Rscripts/05_manhattanPlot.R)| Obtain Manhattan plots |[<img src="https://colab.research.google.com/assets/colab-badge.svg">](https://colab.research.google.com/github/VeronicaNoe/epiTree/blob/main/notebooks/05_manhattanPlot.ipynb)|
+|6|[06_epiTree.R](https://github.com/VeronicaNoe/epiTree/blob/main/Rscripts/01_filterMethylation.R)| EDIT |[<img src="https://colab.research.google.com/assets/colab-badge.svg">](https://colab.research.google.com/github/VeronicaNoe/epiTree/blob/main/notebooks/01_filterMethylation.ipynb)|
