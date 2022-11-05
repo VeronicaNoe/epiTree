@@ -45,4 +45,8 @@ Below there are notebooks demonstrating how data was processing in the article u
 |3|[03_epiTree.R](https://github.com/VeronicaNoe/epiTree/blob/main/Rscripts/03_distances.R)| Generate distances matrices |[<img src="https://colab.research.google.com/assets/colab-badge.svg">](https://colab.research.google.com/github/VeronicaNoe/epiTree/blob/main/notebooks/03_distances.ipynb)|
 |4|[04_epiTree.R](https://github.com/VeronicaNoe/epiTree/blob/main/Rscripts/04_differentialCytosineMethylationWithDSS.R)| Obtain the differential Methylated Cytosines with DSS |[<img src="https://colab.research.google.com/assets/colab-badge.svg">](https://colab.research.google.com/github/VeronicaNoe/epiTree/blob/main/notebooks/04_differentialCytosineMethylationWithDSS.ipynb)|
 |5|[05_epiTree.R](https://github.com/VeronicaNoe/epiTree/blob/main/Rscripts/05_manhattanPlot.R)| Obtain Manhattan plots |[<img src="https://colab.research.google.com/assets/colab-badge.svg">](https://colab.research.google.com/github/VeronicaNoe/epiTree/blob/main/notebooks/05_manhattanPlot.ipynb)|
-|6|[06_epiTree.R](https://github.com/VeronicaNoe/epiTree/blob/main/Rscripts/01_filterMethylation.R)| EDIT |[<img src="https://colab.research.google.com/assets/colab-badge.svg">](https://colab.research.google.com/github/VeronicaNoe/epiTree/blob/main/notebooks/01_filterMethylation.ipynb)|
+|6|[06_epiTree.R](https://github.com/VeronicaNoe/epiTree/blob/main/Rscripts/06_dendrogram.R)| Obtain dendrograms |[<img src="https://colab.research.google.com/assets/colab-badge.svg">](https://colab.research.google.com/github/VeronicaNoe/epiTree/blob/main/notebooks/06_dendrogram.ipynb)|
+
+|7|[06_epiTree.R](https://github.com/VeronicaNoe/epiTree/blob/main/Rscripts/06_dendrogram.R)| EDIT |[<img src="https://colab.research.google.com/assets/colab-badge.svg">](https://colab.research.google.com/github/VeronicaNoe/epiTree/blob/main/notebooks/06_dendrogram.ipynb)|
+
+https://github.com/VeronicaNoe/epiTree/blob/main/notebooks/
