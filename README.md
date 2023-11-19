@@ -1,6 +1,6 @@
 # Environmental and genealogical effects on DNA methylation in a widespread apomictic dandelion lineage
 
-This repository reproduces the results presented in [*"Environmental and genealogical effects on DNA methylation in a widespread apomictic dandelion lineage"*](link2journal) by V.N. Ibañez, M. van Antro, C. Peña Ponton, S. Ivanovic, C.A.M. Wagemaker, F. Gawehns, K.J.F. Verhoeven.
+This repository reproduces the results presented in [*"Environmental and genealogical effects on DNA methylation in a widespread apomictic dandelion lineage"*](https://doi.org/10.1111/jeb.14162) by V.N. Ibañez, M. van Antro, C. Peña Ponton, S. Ivanovic, C.A.M. Wagemaker, F. Gawehns, K.J.F. Verhoeven.
 
 DNA methylation that occurs in CG sequence context shows transgenerational stability and high epimutation rate, and can thus provide genealogical information at short time scales. Here, [epiGBS2 protocol](https://github.com/nioo-knaw/epiGBS2) is used to analyze DNA methylation between accessions from a geographically widespread, apomictic common dandelion *(Taraxacum officinale)* lineage grown experimentally under different light conditions.
 
